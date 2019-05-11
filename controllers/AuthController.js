@@ -37,7 +37,7 @@ authController.login = function(req, res) {
     });
 
     // return the information including token as JSON
-    res.status(200).send({ auth: true, token: token }); 
+    res.status(200).send({ id: user.__id, name: user.name, email: user.email, token: token }); 
   });
 
 };
@@ -64,7 +64,7 @@ authController.register  = function(req, res) {
       expiresIn: 86400 // expires in 24 hours
     });
 
-    res.status(200).send({ auth: true, token: token });
+    res.status(200).send({ created: true});
   });
 
 };
